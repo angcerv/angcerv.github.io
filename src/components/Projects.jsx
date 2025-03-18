@@ -45,7 +45,7 @@ const Projects = () => {
       title: "WriteWay", 
       description: "Desktop application for writers designed to write and plan novels and collaborate with other authors.", 
       techs: ["ElectronJS", "MongoDB", "NodeJS"], 
-      image: "/assets/writeway_1.png"  // Ruta de la imagen de fondo para este proyecto
+      image: "./assets/writeway_1.png"  // Ruta de la imagen de fondo para este proyecto
     },
   ];
 
