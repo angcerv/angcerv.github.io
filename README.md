@@ -14,9 +14,9 @@ Check out my portfolio live at:
 - 📞 **Contact Section** – Easy ways to connect with me.
 
 ## 🛠 Tech Stack
-- **Frontend:** React, Tailwind CSS, Vite.
-- **Deployment:** GitHub Pages.
-- **Version Control:** Git & GitHub.
+- **Frontend:** React, Tailwind CSS, Vite
+- **Deployment:** GitHub Pages
+- **Version Control:** Git & GitHub
 
 ## 📥 Installation & Setup
 If you want to run this project locally, follow these steps:
