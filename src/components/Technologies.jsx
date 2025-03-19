@@ -13,7 +13,7 @@ const TechnologyCard = ({ tech, logo: Logo, years, index }) => {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative flex w-33 h-9 perspective group hover:cursor-default"
+      className="relative flex w-28 h-8 md:w-31 md:h-9 perspective group hover:cursor-default"
     >
       <div className="w-full h-full flex items-center gap-1 p-2 rounded-xl border border-teal-500 bg-teal-900 shadow-lg transition-transform duration-400 ease-in-out transform group-hover:rotate-y-180">
         {/* Front face */}
@@ -85,7 +85,7 @@ const Technologies = () => {
   ];
 
   return (
-    <div>
+    <div className="px-4">
       {techCategories.map((category, catIndex) => (
         <motion.div
           key={catIndex}
@@ -100,7 +100,7 @@ const Technologies = () => {
             {category.title}
           </h2>
           <div className="max-w-4xl mx-auto p-4 rounded-2xl bg-gray-800 shadow-lg">
-            <div className="flex gap-x-4 gap-y-6">
+            <div className="flex flex-wrap gap-4 justify-center">
               {category.techs.map((t, index) => (
                 <TechnologyCard key={index} tech={t.tech} logo={t.logo} years={t.years} index={index} />
               ))}

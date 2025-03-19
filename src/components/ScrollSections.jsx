@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion"; // ✅ Importar framer-motion
-import { FaTools, FaProjectDiagram, FaUserAlt, FaBriefcase, FaInfoCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaTools, FaProjectDiagram, FaUserAlt, FaBriefcase, FaInfoCircle, FaBars } from "react-icons/fa";
 import Introduction from './Introduction';
 import Technologies from './Technologies';
 import Projects from './Projects';
@@ -10,12 +10,13 @@ import AboutMe from './AboutMe';
 const ScrollSections = () => {
   const [activeTab, setActiveTab] = useState("introduction");
   const [visibleSections, setVisibleSections] = useState({
-    introduction: true, // Siempre visible desde el inicio
+    introduction: true,
     technologies: false,
     projects: false,
     experience: false,
     about: false,
   });
+  const [showMenu, setShowMenu] = useState(false); // Estado del menú en móviles
 
   const sectionIds = ["introduction", "technologies", "projects", "experience", "about"];
 
@@ -29,12 +30,10 @@ const ScrollSections = () => {
         if (section) {
           const top = section.getBoundingClientRect().top;
 
-          // Si la sección está dentro de la vista, la activamos
           if (top < windowHeight * 0.75) {
             setVisibleSections((prev) => ({ ...prev, [id]: true }));
           }
 
-          // También actualizamos la barra lateral
           if (scrollPosition >= section.offsetTop - windowHeight / 3) {
             setActiveTab(id);
           }
@@ -50,6 +49,7 @@ const ScrollSections = () => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      setShowMenu(false); // Cerrar menú en móviles
     }
   };
 
@@ -71,8 +71,15 @@ const ScrollSections = () => {
 
   return (
     <div className="flex">
-      {/* Sidebar */}
-      <div className="fixed top-30 right-3 w-16 h-full bg-gray-900 text-white flex flex-col items-center py-8">
+      {/* Botón de menú para móviles */}
+      <div className="md:hidden fixed top-5 right-5 bg-gray-900 p-3 rounded-lg z-50 shadow-lg">
+        <button onClick={() => setShowMenu(!showMenu)}>
+          <FaBars className="text-white text-2xl" />
+        </button>
+      </div>
+
+      {/* Sidebar para escritorio */}
+      <div className="hidden md:flex fixed top-30 right-3 w-16 h-full bg-gray-900 text-white flex-col items-center py-8">
         {sectionIds.map((id) => (
           <div key={id} className="relative group">
             <button
@@ -83,8 +90,6 @@ const ScrollSections = () => {
             >
               <span className="text-xl">{icons[id]}</span>
             </button>
-
-            {/* Tooltip */}
             <div className="absolute top-1/2 right-full mr-3 -translate-y-1/2 bg-gray-800 text-white text-sm px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
               {labels[id]}
             </div>
@@ -92,12 +97,27 @@ const ScrollSections = () => {
         ))}
       </div>
 
-      {/* Main Content */}
-      <div className="mr-20 p-8 w-full">
+      {/* Menú lateral en móviles */}
+      {showMenu && (
+        <div className="fixed top-0 right-0 w-48 h-full bg-gray-900 text-white flex flex-col items-center py-8 z-50">
+          {sectionIds.map((id) => (
+            <button
+              key={id}
+              onClick={() => scrollToSection(id)}
+              className="w-full py-3 text-center hover:bg-teal-500"
+            >
+              {labels[id]}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Contenido principal */}
+      <div className="mr-0 md:mr-20 p-4 md:p-8 w-full">
         {/* Introduction */}
         <motion.section
           id="introduction"
-          className="mb-28"
+          className="mb-20"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -108,42 +128,41 @@ const ScrollSections = () => {
         {/* Technologies */}
         <motion.section
           id="technologies"
-          className="mb-28 mt-20"
+          className="mb-20 mt-20"
           initial={{ opacity: 0, y: 50 }}
           animate={visibleSections.technologies ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold mb-4">Technologies</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Technologies</h2>
           <Technologies />
-          
         </motion.section>
 
         {/* Projects */}
         <motion.section
           id="projects"
-          className="mb-28 mt-20"
+          className="mb-20 mt-20"
           initial={{ opacity: 0, y: 50 }}
           animate={visibleSections.projects ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
           <hr className="border-t border-gray-500 my-4" />
-          <h2 className="text-4xl font-bold mb-4">Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
           <Projects />
         </motion.section>
 
         {/* Experience */}
         <motion.section
           id="experience"
-          className="mb-28 mt-20"
+          className="mb-20 mt-20"
           initial={{ opacity: 0, y: 50 }}
           animate={visibleSections.experience ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
           <hr className="border-t border-gray-500 my-4" />
-          <h2 className="text-4xl font-bold mb-4">Experience</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
           <Experience />
         </motion.section>
-        
+
         {/* About Me */}
         <motion.section
           id="about"
@@ -153,7 +172,7 @@ const ScrollSections = () => {
           transition={{ duration: 0.6 }}
         >
           <hr className="border-t border-gray-500 my-4" />
-          <h2 className="text-4xl font-bold mb-4">About Me</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <AboutMe />
         </motion.section>
       </div>
