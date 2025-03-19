@@ -6,7 +6,6 @@ const AboutMe = () => {
     <motion.div className="max-w-6xl mx-auto px-6 py-3 rounded-xl text-white"
     initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
       >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7 items-center">
 

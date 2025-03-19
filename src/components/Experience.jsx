@@ -95,7 +95,6 @@ const Experience = () => {
     <motion.div className="space-y-12"
     initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
       >
       {/* Professional Experience */}
       <h2 className="text-2xl font-bold text-gray-400 flex items-center gap-2 mb-4">
