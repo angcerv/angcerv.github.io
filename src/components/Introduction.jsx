@@ -40,7 +40,7 @@ const Introduction = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center mt-6 md:mt-10 p-4 md:p-8 w-full">
-      <section className="py-10 border-b border-gray-700 flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
+      <section className="py-10 flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
         {/* Contenido de texto */}
         <div className="md:w-2/3">
           <h3 className="text-xl">
@@ -56,9 +56,9 @@ const Introduction = () => {
             </span>
             Software Development Engineer
           </p>
-          <p className="text-gray-400 text-justify leading-relaxed mt-4 mb-7 max-w-md md:max-w-xl">
+          <p className="text-gray-400 md:text-justify leading-relaxed mt-4 mb-7 max-w-md md:max-w-xl">
             Full Stack Software Engineer with 4+ years of experience in designing, developing, and maintaining high-quality software solutions.
-        </p>
+            </p>
 
 
           {/* Botón de email */}

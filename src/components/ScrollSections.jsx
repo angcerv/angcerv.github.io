@@ -99,25 +99,42 @@ const ScrollSections = () => {
 
       {/* Menú lateral en móviles */}
       {showMenu && (
-        <div className="fixed top-0 right-0 w-48 h-full bg-gray-900 text-white flex flex-col items-center py-8 z-50">
-          {sectionIds.map((id) => (
-            <button
-              key={id}
-              onClick={() => scrollToSection(id)}
-              className="w-full py-3 text-center hover:bg-teal-500"
-            >
-              {labels[id]}
-            </button>
-          ))}
-        </div>
+        <motion.div
+          initial={{ x: "100%", opacity: 0 }} // Empieza fuera de la pantalla
+          animate={{ x: 0, opacity: 1 }} // Se desliza dentro
+          exit={{ x: "100%", opacity: 0 }} // Se desliza hacia fuera
+          transition={{ duration: 0.3, ease: "easeInOut" }} // Duración de 0.3s
+          className="fixed top-0 right-0 w-48 h-full bg-gray-900 text-white flex flex-col items-center py-8 z-50 shadow-lg"
+        >
+          {/* Botón para cerrar el menú */}
+          <button 
+            onClick={() => setShowMenu(false)} 
+            className="absolute top-4 right-4 text-white text-2xl"
+          >
+            ✖
+          </button>
+
+          {/* Opciones del menú */}
+          <div className="mt-10 w-full">
+            {sectionIds.map((id) => (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className="w-full py-3 text-center hover:bg-teal-500"
+              >
+                {labels[id]}
+              </button>
+            ))}
+          </div>
+        </motion.div>
       )}
+
 
       {/* Contenido principal */}
       <div className="mr-0 md:mr-20 p-4 md:p-8 w-full">
         {/* Introduction */}
         <motion.section
           id="introduction"
-          className="mb-20"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -128,11 +145,12 @@ const ScrollSections = () => {
         {/* Technologies */}
         <motion.section
           id="technologies"
-          className="mb-20 mt-20"
+          className="mb-20"
           initial={{ opacity: 0, y: 50 }}
           animate={visibleSections.technologies ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
+          <hr className="border-t border-gray-500 mt-4 mb-10 sm:mb-20" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Technologies</h2>
           <Technologies />
         </motion.section>
@@ -140,12 +158,12 @@ const ScrollSections = () => {
         {/* Projects */}
         <motion.section
           id="projects"
-          className="mb-20 mt-20"
+          className="mb-20"
           initial={{ opacity: 0, y: 50 }}
           animate={visibleSections.projects ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <hr className="border-t border-gray-500 my-4" />
+          <hr className="border-t border-gray-500 mt-4 mb-10 sm:mb-20" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
           <Projects />
         </motion.section>
@@ -158,7 +176,7 @@ const ScrollSections = () => {
           animate={visibleSections.experience ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <hr className="border-t border-gray-500 my-4" />
+          <hr className="border-t border-gray-500 my-4 mb-10 sm:mb-20" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience</h2>
           <Experience />
         </motion.section>
@@ -171,7 +189,7 @@ const ScrollSections = () => {
           animate={visibleSections.about ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <hr className="border-t border-gray-500 my-4" />
+          <hr className="border-t border-gray-500 my-4 mb-10 sm:mb-20" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <AboutMe />
         </motion.section>

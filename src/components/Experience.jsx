@@ -68,7 +68,7 @@ const Experience = () => {
       </h2>
 
       <div className="relative">
-        <div className="absolute left-3 sm:left-2.5 top-0 bg-gray-300 w-1 h-full"></div>
+        <div className="absolute left-3 sm:left-2.5 top-0 bg-gray-300 w-1 h-full hidden sm:block"></div>
 
         {experiences.map((experience, index) => (
           <motion.div
@@ -76,11 +76,11 @@ const Experience = () => {
             className="flex flex-col sm:flex-row items-start sm:items-center space-x-0 sm:space-x-6 mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.3 }}
+            transition={{ duration: 0.5, delay: index * 0.2 }}
           >
             {/* Punto en la línea de tiempo */}
-            <div className="w-6 h-6 z-1 bg-teal-500 rounded-full flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-full"></div>
+            <div className="hidden sm:flex w-6 h-6 z-1 bg-teal-500 rounded-full items-center justify-center">
+              <div className="hidden sm:block w-3 h-3 bg-white rounded-full"></div>
             </div>
 
             <div className="flex-1">
@@ -107,7 +107,7 @@ const Experience = () => {
       </h2>
 
       <div className="relative">
-        <div className="absolute left-3 sm:left-2.5 top-0 bg-gray-300 w-1 h-full"></div>
+        <div className="hidden sm:block absolute left-3 sm:left-2.5 top-0 bg-gray-300 w-1 h-full"></div>
 
         {education.map((edu, index) => (
           <motion.div
@@ -118,8 +118,8 @@ const Experience = () => {
             transition={{ duration: 0.5, delay: (experiences.length + index) * 0.3 }}
           >
             {/* Punto en la línea de tiempo */}
-            <div className="w-6 h-6 z-1 bg-teal-500 rounded-full flex items-center justify-center">
-              <div className="w-3 h-3 bg-white rounded-full"></div>
+            <div className="hidden sm:flex  w-6 h-6 z-1 bg-teal-500 rounded-full items-center justify-center">
+              <div className="hidden sm:block  w-3 h-3 bg-white rounded-full"></div>
             </div>
 
             <div className="flex-1">
