@@ -1,5 +1,4 @@
 import React from "react";
-import { FaDownload } from "react-icons/fa"; // Importa el ícono de descarga
 
 function LinkButton({ text, onClick, icon }) {
   return (
@@ -10,7 +9,7 @@ function LinkButton({ text, onClick, icon }) {
                  hover:bg-teal-950 hover:shadow-lg hover:scale-105 
                  active:scale-95 active:shadow-sm"
     >
-      {icon && <span className="mr-2">{icon}</span>} {/* Si se pasa un icono, lo renderiza */}
+      {icon && <span className="mr-2">{icon}</span>}
       {text}
     </button>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
-import { FaCode, FaTools, FaServer, FaFileAlt } from 'react-icons/fa'; // Importar los íconos
+import { motion } from "framer-motion";
+import { FaCode, FaTools, FaServer, FaFileAlt } from 'react-icons/fa';
 
 const Experience = () => {
   const experiences = [
@@ -91,8 +92,12 @@ const Experience = () => {
   ];
 
   return (
-    <div className="space-y-12">
-      {/* Experiencia Profesional */}
+    <motion.div className="space-y-12"
+    initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+      >
+      {/* Professional Experience */}
       <h2 className="text-2xl font-bold text-gray-400 flex items-center gap-2 mb-4">
         Professional Experience
       </h2>
@@ -125,7 +130,7 @@ const Experience = () => {
         ))}
       </div>
 
-      {/* Educación */}
+      {/* Education */}
       <h2 className="text-2xl font-bold text-gray-400 flex items-center gap-2 mb-4">
         Education
       </h2>
@@ -146,7 +151,7 @@ const Experience = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
