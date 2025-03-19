@@ -10,7 +10,7 @@ const AboutMe = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="flex flex-col md:flex-row items-center gap-10">
-        {/* Sección de texto */}
+
         <motion.div 
           className="space-y-4 text-center md:text-left flex-1"
           initial={{ opacity: 0, x: -50 }}
@@ -22,7 +22,6 @@ const AboutMe = () => {
           <p>I’m passionate about designing and developing applications that enhance user experiences, and I truly love my career and the ever-evolving world of software engineering.</p> 
         </motion.div>
 
-        {/* Imagen más ancha */}
         <motion.div 
           className="flex justify-center flex-1"
           initial={{ opacity: 0, scale: 0.8 }}

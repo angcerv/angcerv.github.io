@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaPlug, FaCogs, FaJs, FaJava, FaReact, FaAngular, FaHtml5, FaCss3, FaNodeJs, FaGitAlt, FaAws, FaPython, FaDatabase } from "react-icons/fa";
+import { FaBootstrap, FaPlug, FaCogs, FaJs, FaJava, FaReact, FaAngular, FaHtml5, FaCss3, FaNodeJs, FaGitAlt, FaAws, FaPython, FaDatabase } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoElectron } from "react-icons/io5";
 import { SiTypescript, SiCplusplus } from "react-icons/si";
@@ -43,6 +43,7 @@ const Technologies = () => {
         { tech: "HTML5", logo: FaHtml5, years: 4 },
         { tech: "CSS", logo: FaCss3, years: 4 },
         { tech: "Tailwind", logo: RiTailwindCssFill, years: 3 },
+        { tech: "Boostrap", logo: FaBootstrap, years: 2 },
       ],
     },
     {

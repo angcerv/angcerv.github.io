@@ -93,7 +93,6 @@ const Introduction = () => {
             </button>
           </div>
 
-          {/* Botones de LinkedIn, GitHub y Resume */}
           <div className="flex flex-col md:flex-row items-center md:items-start text-sm mt-8 mb-8">
             <span className="text-gray-300">Check out my:</span>
             <div className="flex space-x-3 ml-0 md:ml-3 mt-3 md:mt-0">

@@ -78,7 +78,7 @@ const Experience = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            {/* Punto en la línea de tiempo */}
+            {/* Timeline point */}
             <div className="hidden sm:flex w-6 h-6 z-1 bg-teal-500 rounded-full items-center justify-center">
               <div className="hidden sm:block w-3 h-3 bg-white rounded-full"></div>
             </div>
@@ -117,7 +117,7 @@ const Experience = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: (experiences.length + index) * 0.3 }}
           >
-            {/* Punto en la línea de tiempo */}
+            {/* Timeline point */}
             <div className="hidden sm:flex  w-6 h-6 z-1 bg-teal-500 rounded-full items-center justify-center">
               <div className="hidden sm:block  w-3 h-3 bg-white rounded-full"></div>
             </div>

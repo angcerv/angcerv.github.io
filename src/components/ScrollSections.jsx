@@ -16,7 +16,7 @@ const ScrollSections = () => {
     experience: false,
     about: false,
   });
-  const [showMenu, setShowMenu] = useState(false); // Estado del menú en móviles
+  const [showMenu, setShowMenu] = useState(false);
 
   const sectionIds = ["introduction", "technologies", "projects", "experience", "about"];
 
