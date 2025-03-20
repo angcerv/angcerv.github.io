@@ -38,12 +38,13 @@ const Technologies = () => {
       icon: <FaReact className="text-teal-500" />,
       techs: [
         { tech: "Javascript", logo: FaJs, years: 4 },
+        { tech: "Typescript", logo: SiTypescript, years: 1 },
         { tech: "React", logo: FaReact, years: 3 },
         { tech: "Angular", logo: FaAngular, years: 3 },
+        { tech: "Tailwind", logo: RiTailwindCssFill, years: 3 },
         { tech: "HTML5", logo: FaHtml5, years: 4 },
         { tech: "CSS", logo: FaCss3, years: 4 },
-        { tech: "Tailwind", logo: RiTailwindCssFill, years: 3 },
-        { tech: "Boostrap", logo: FaBootstrap, years: 2 },
+       
       ],
     },
     {
@@ -71,16 +72,6 @@ const Technologies = () => {
         { tech: "REST", logo: FaPlug, years: 4 },
         { tech: "SOAP", logo: FaCogs, years: 4 },
         { tech: "AWS", logo: FaAws, years: 2 },
-      ],
-    },
-    {
-      title: "Other Languages",
-      icon: <SiCplusplus className="text-teal-500" />,
-      techs: [
-        { tech: "Typescript", logo: SiTypescript, years: 1 },
-        { tech: "Python", logo: FaPython, years: 2 },
-        { tech: "C", logo: SiCplusplus, years: 1 },
-        { tech: "C#", logo: PiFileCSharpFill, years: 1 },
       ],
     },
   ];

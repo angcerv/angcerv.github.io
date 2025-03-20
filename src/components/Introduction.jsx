@@ -93,8 +93,8 @@ const Introduction = () => {
             </button>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center md:items-start text-sm mt-8 mb-8">
-            <span className="text-gray-300">Check out my:</span>
+          <div className="flex flex-col md:flex-col items-center md:items-start lg:flex-row lg:items-start text-sm mt-8 mb-8">
+            <span className="text-gray-300 md:mb-3">Check out my:</span>
             <div className="flex space-x-3 ml-0 md:ml-3 mt-3 md:mt-0">
               <LinkButton
                 text="LinkedIn"
@@ -108,7 +108,7 @@ const Introduction = () => {
         </div>
 
         {/* Avatar */}
-        <div className="relative w-48 h-48 md:w-60 md:h-60 bg-teal-500 rounded-full overflow-hidden mt-8 md:mt-0 md:ml-10">
+        <div className="relative w-40 h-48 md:w-45 md:h-52 lg:w-50 lg:h-60 bg-teal-500 rounded-full overflow-hidden mt-8 md:mt-0 md:ml-10">
           <img src={avatar} alt="Avatar" className="w-full h-full object-cover" />
         </div>
       </section>
