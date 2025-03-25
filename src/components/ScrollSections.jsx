@@ -8,60 +8,18 @@ import Experience from './Experience';
 import AboutMe from './AboutMe';
 import Sidebar from "./Sidebar";
 import MobileMenu from "./MobileMenu";
+import useScrollNavigation from './useScrollNavigation';
 
 const ScrollSections = () => {
-  const [activeTab, setActiveTab] = useState("introduction");
-  const [visibleSections, setVisibleSections] = useState({
-    introduction: true,
-    technologies: false,
-    projects: false,
-    experience: false,
-    about: false,
-  });
-  const [showMenu, setShowMenu] = useState(false);
-
   const sectionIds = ["introduction", "technologies", "projects", "experience", "about"];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-
-      sectionIds.forEach((id) => {
-        const section = document.getElementById(id);
-        if (section) {
-          const top = section.getBoundingClientRect().top;
-
-          if (top < windowHeight * 0.75) {
-            setVisibleSections((prev) => ({ ...prev, [id]: true }));
-          }
-
-          if (scrollPosition >= section.offsetTop - windowHeight / 3) {
-            setActiveTab(id);
-          }
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setShowMenu(false); // Cerrar menú en móviles
-    }
-  };
-
-  const labels = {
-    introduction: "Introduction",
-    technologies: "Technologies",
-    projects: "Projects",
-    experience: "Experience",
-    about: "About Me",
-  };
+  const {
+    activeTab,
+    visibleSections,
+    showMenu,
+    setShowMenu,
+    scrollToSection,
+  } = useScrollNavigation(sectionIds);
 
   return (
     <div className="flex max-w-full">
