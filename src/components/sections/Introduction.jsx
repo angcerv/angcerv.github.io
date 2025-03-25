@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import avatar from "../assets/img/avatar.png";
-import LinkButton from "./LinkButton";
+import avatar from "../../assets/img/avatar.png";
+import LinkButton from "../buttons/LinkButton";
 import { FaDownload, FaMapMarkerAlt, FaLinkedin, FaGithub, FaRegCopy, FaCheck } from "react-icons/fa";
 
 const Introduction = () => {

@@ -1,4 +1,4 @@
-import avatar from '../assets/img/profile_grey.jpg';
+import avatar from '../../assets/img/profile_grey.jpg';
 import { motion } from "framer-motion";
 
 const AboutMe = () => {

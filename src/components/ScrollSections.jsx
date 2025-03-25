@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaBars } from "react-icons/fa";
-import Introduction from './Introduction';
-import Technologies from './Technologies';
-import Projects from './Projects';
-import Experience from './Experience';
-import AboutMe from './AboutMe';
-import Sidebar from "./Sidebar";
-import MobileMenu from "./MobileMenu";
-import useScrollNavigation from './useScrollNavigation';
+import Introduction from './sections/Introduction';
+import Technologies from './sections/Technologies';
+import Projects from './sections/Projects';
+import Experience from './sections/Experience';
+import AboutMe from './sections/AboutMe';
+import Sidebar from "./sidebar/Sidebar";
+import MobileMenu from "./mobileMenu/MobileMenu";
+import useScrollNavigation from '../hooks/useScrollNavigation';
 
 const ScrollSections = () => {
   const sectionIds = ["introduction", "technologies", "projects", "experience", "about"];
