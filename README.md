@@ -4,7 +4,7 @@ Welcome to my personal portfolio! This project showcases my skills, projects, an
 
 ## 🌎 Live Demo
 Check out my portfolio live at:
-[https://angcerv.github.io/portfolioAC/](https://angcerv.github.io/portfolioAC/)
+[https://angcerv.github.io/](https://angcerv.github.io/)
 
 ## 📌 Features
 - 💡 **Modern UI** – Clean and minimalistic design using Tailwind CSS.
@@ -23,7 +23,7 @@ If you want to run this project locally, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/angcerv/portfolioAC.git
+git clone https://github.com/angcerv/angcerv.github.io.git
 
 # Navigate to the project folder
 cd portfolioAC

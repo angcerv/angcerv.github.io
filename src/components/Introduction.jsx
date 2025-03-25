@@ -94,7 +94,7 @@ const Introduction = () => {
           </div>
 
           <div className="flex flex-col md:flex-col items-center md:items-start lg:flex-row lg:items-start text-sm mt-8 mb-8">
-            <span className="text-gray-300 md:mb-3">Check out my:</span>
+            <span className="text-gray-300 md:mt-1.5 md:mb-3">Check out my:</span>
             <div className="flex space-x-3 ml-0 md:ml-3 mt-3 md:mt-0">
               <LinkButton
                 text="LinkedIn"

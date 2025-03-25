@@ -6,3 +6,8 @@
   --font-space-grotesk: "Space Grotesk", sans-serif; 
   --font-fira-code: "Fira Code", monospace; 
 }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}

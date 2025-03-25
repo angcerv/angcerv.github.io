@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaTools, FaProjectDiagram, FaUserAlt, FaBriefcase, FaInfoCircle, FaBars } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import Introduction from './Introduction';
 import Technologies from './Technologies';
 import Projects from './Projects';
 import Experience from './Experience';
 import AboutMe from './AboutMe';
+import Sidebar from "./Sidebar";
+import MobileMenu from "./MobileMenu";
 
 const ScrollSections = () => {
   const [activeTab, setActiveTab] = useState("introduction");
@@ -53,14 +55,6 @@ const ScrollSections = () => {
     }
   };
 
-  const icons = {
-    introduction: <FaInfoCircle />,
-    technologies: <FaTools />,
-    projects: <FaProjectDiagram />,
-    experience: <FaBriefcase />,
-    about: <FaUserAlt />,
-  };
-
   const labels = {
     introduction: "Introduction",
     technologies: "Technologies",
@@ -70,65 +64,22 @@ const ScrollSections = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex max-w-full">
       {/* Botón de menú para móviles */}
-      <div className="md:hidden fixed top-5 right-5 bg-gray-900 p-3 rounded-lg z-50 shadow-lg">
+      <div className="md:hidden fixed top-10 right-7 bg-gray-900 p-3 rounded-lg z-50 shadow-lg">
         <button onClick={() => setShowMenu(!showMenu)}>
           <FaBars className="text-white text-2xl" />
         </button>
       </div>
 
-      {/* Sidebar para escritorio */}
-      <div className="hidden md:flex fixed top-30 right-3 w-16 h-full bg-gray-900 text-white flex-col items-center py-8">
-        {sectionIds.map((id) => (
-          <div key={id} className="relative group">
-            <button
-              onClick={() => scrollToSection(id)}
-              className={`w-12 h-12 mb-8 rounded-full flex justify-center items-center cursor-pointer transition-all relative z-10 ${
-                activeTab === id ? "bg-teal-500" : "bg-gray-700 hover:bg-teal-500"
-              }`}
-            >
-              <span className="text-xl">{icons[id]}</span>
-            </button>
-            <div className="absolute top-1/2 right-full mr-3 -translate-y-1/2 bg-gray-800 text-white text-sm px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">
-              {labels[id]}
-            </div>
-          </div>
-        ))}
-      </div>
+      <Sidebar activeTab={activeTab} scrollToSection={scrollToSection} sectionIds={sectionIds} />
 
-      {/* Menú lateral en móviles */}
-      {showMenu && (
-        <motion.div
-          initial={{ x: "100%", opacity: 0 }} // Empieza fuera de la pantalla
-          animate={{ x: 0, opacity: 1 }} // Se desliza dentro
-          exit={{ x: "100%", opacity: 0 }} // Se desliza hacia fuera
-          transition={{ duration: 0.3, ease: "easeInOut" }} // Duración de 0.3s
-          className="fixed top-0 right-0 w-48 h-full bg-gray-900 text-white flex flex-col items-center py-8 z-50 shadow-lg"
-        >
-          {/* Botón para cerrar el menú */}
-          <button 
-            onClick={() => setShowMenu(false)} 
-            className="absolute top-4 right-4 text-white text-2xl"
-          >
-            ✖
-          </button>
-
-          {/* Opciones del menú */}
-          <div className="mt-10 w-full">
-            {sectionIds.map((id) => (
-              <button
-                key={id}
-                onClick={() => scrollToSection(id)}
-                className="w-full py-3 text-center hover:bg-teal-500"
-              >
-                {labels[id]}
-              </button>
-            ))}
-          </div>
-        </motion.div>
-      )}
-
+      <MobileMenu 
+        showMenu={showMenu} 
+        setShowMenu={setShowMenu} 
+        scrollToSection={scrollToSection} 
+        sectionIds={sectionIds} 
+      />
 
       {/* Contenido principal */}
       <div className="mr-0 md:mr-20 p-4 md:p-8 w-full">

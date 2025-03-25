@@ -9,7 +9,7 @@ export default {
         fontFamily: {
           sora: ['Sora', 'sans-serif'],
           'space-grotesk': ['Space Grotesk', 'sans-serif'],
-          'fira-code': ['Fira Code', 'monospace'],  // Fuente Fira Code
+          'fira-code': ['Fira Code', 'monospace'],
         },
       },
     },
