@@ -50,11 +50,11 @@ const Introduction = () => {
             Angela Cervantes
           </h1>
           <p className="text-xl text-gray-300 leading-relaxed mb-4">
-            <span className="flex justify-center md:justify-start items-center text-sm text-gray-400">
+            <span className="flex justify-center md:justify-start items-center text-xs text-gray-400">
               <FaMapMarkerAlt className="mr-2 text-red-700" />
-              Vancouver, BC, Canada
+              Greater Madrid Metropolitan Area, Spain
             </span>
-            Software Development Engineer
+            <p className="text-md">Software Development Engineer</p>
           </p>
           <p className="text-gray-400 md:text-justify leading-relaxed mt-4 mb-7 max-w-md md:max-w-xl">
             Full Stack Software Engineer with 4+ years of experience in designing, developing, and maintaining high-quality software solutions.

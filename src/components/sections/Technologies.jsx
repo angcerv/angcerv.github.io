@@ -1,10 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaBootstrap, FaPlug, FaCogs, FaJs, FaJava, FaReact, FaAngular, FaHtml5, FaCss3, FaNodeJs, FaGitAlt, FaAws, FaPython, FaDatabase } from "react-icons/fa";
+import { FaBootstrap, FaPlug, FaCogs, FaJs, FaJava, FaReact, FaAngular, FaHtml5, FaCss3, FaNodeJs, FaGitAlt, FaAws, FaDatabase } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoLogoElectron } from "react-icons/io5";
-import { SiTypescript, SiCplusplus } from "react-icons/si";
-import { PiFileCSharpFill } from "react-icons/pi";
+import { SiTypescript } from "react-icons/si";
 import { DiMysql } from "react-icons/di";
 
 const TechnologyCard = ({ tech, logo: Logo, years, index }) => {
@@ -38,7 +37,7 @@ const Technologies = () => {
       icon: <FaReact className="text-teal-500" />,
       techs: [
         { tech: "Javascript", logo: FaJs, years: 4 },
-        { tech: "Typescript", logo: SiTypescript, years: 2 },
+        { tech: "Typescript", logo: SiTypescript, years: 3 },
         { tech: "React", logo: FaReact, years: 3 },
         { tech: "Angular", logo: FaAngular, years: 3 },
         { tech: "Tailwind", logo: RiTailwindCssFill, years: 3 },

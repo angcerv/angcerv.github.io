@@ -17,9 +17,8 @@ const AboutMe = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <p>My name is Angela. I'm a Software Development Engineer with 4+ years of experience building user-focused applications.</p>
-          <p>Recently relocated to Vancouver, I'm eager to explore new opportunities and continue growing within the Canadian tech industry.</p>   
-          <p>I’m passionate about designing and developing applications that enhance user experiences, and I truly love my career and the ever-evolving world of software engineering.</p> 
+          <p>My name is Angela. I'm a Software Development Engineer who truly love my career and the ever-evolving world of software engineering. One of the things.</p> 
+          <p>I moved to Canada recently to embrace a new challenge—starting from zero in a new country, both personally and professionally. Now that I’m heading back to Madrid, I’m looking for a role where I can work on exciting projects and create real impact with my experience.</p>
         </motion.div>
 
         <motion.div 
