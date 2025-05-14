@@ -37,10 +37,10 @@ const Technologies = () => {
       icon: <FaReact className="text-teal-500" />,
       techs: [
         { tech: "Javascript", logo: FaJs, years: 4 },
-        { tech: "Typescript", logo: SiTypescript, years: 3 },
-        { tech: "React", logo: FaReact, years: 3 },
-        { tech: "Angular", logo: FaAngular, years: 3 },
-        { tech: "Tailwind", logo: RiTailwindCssFill, years: 3 },
+        { tech: "Typescript", logo: SiTypescript, years: 1 },
+        { tech: "React", logo: FaReact, years: 2 },
+        { tech: "Angular", logo: FaAngular, years: 2 },
+        { tech: "Tailwind", logo: RiTailwindCssFill, years: 2 },
         { tech: "HTML5", logo: FaHtml5, years: 4 },
         { tech: "CSS", logo: FaCss3, years: 4 },
        
