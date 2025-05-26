@@ -1,4 +1,4 @@
-# 🚀 Portfolio - Angel Cervantes
+# 🚀 Portfolio - Angela Cervantes
 
 Welcome to my personal portfolio! This project showcases my skills, projects, and experience as a developer. Built using **React** and **Tailwind CSS**, it serves as an interactive and responsive platform to highlight my work.
 

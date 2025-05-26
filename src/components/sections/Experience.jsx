@@ -11,7 +11,7 @@ const Experience = () => {
       location: 'Madrid, Spain',
       dateRange: 'Sep 23 - Jan 25',
       description: [
-        { text: 'Developed and implemented new features, primarily using Java, JavaScript, React and Angular.', icon: <FaCode /> },
+        { text: 'Developed and implemented new features, primarily using Java, JavaScript, and React.', icon: <FaCode /> },
         { text: 'Maintained and fixed code issues, while conducting code reviews, performing testing, and managing source control.', icon: <FaTools /> },
         { text: 'Provided technical support to customers by troubleshooting software issues and assisting with the implementation of SQL scripts.', icon: <FaServer /> },
         { text: 'Created comprehensive documentation, covering code functionality, user interfaces, and internal team documentation.', icon: <FaFileAlt /> }
@@ -37,7 +37,7 @@ const Experience = () => {
       location: 'Madrid, Spain',
       dateRange: 'Aug 21 - Sep 23',
       description: [
-        { text: 'Developed solutions for bugs and errors identified, primarily using Java, Gosu, and JavaScript.', icon: <FaCode /> },
+        { text: 'Developed solutions for bugs and errors identified, primarily using Java and JavaScript.', icon: <FaCode /> },
         { text: 'Maintained code and fixed issues to ensure application stability, while analyzing application logs to resolve critical incidents.', icon: <FaTools /> },
         { text: 'Provided technical support to customers by troubleshooting software issues and answering product-related questions.', icon: <FaServer /> },
         { text: 'Created and maintained technical documentation to streamline issue resolution and improve internal workflows.', icon: <FaFileAlt /> }
