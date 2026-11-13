@@ -8,6 +8,7 @@
 - Use the installed `lucide-react` icon library. Decorative icons use `aria-hidden`; icon-only controls need accessible names.
 - Use `.text-link`, `.button`, `.back-link`, `.status`, and `.example-label` for equivalent controls. Unavailable access is a noninteractive `.unavailable` element.
 - Retain visible keyboard focus, reduced-motion support, and responsive layouts.
+- Responsive sizing uses `--layout-max`, `--page-gutter`, and `--text-*` tokens in `src/styles.css`; keep fluid desktop sizing, readable text widths, and the shared grid's three/two/one-column breakpoints.
 - Do not invent app capabilities, operating systems, distribution links, or product assets.
 - Do not generate images or launch applications/browsers for testing without explicit permission.
 - Run `npm run typecheck` and `npm run build` for implementation verification.
