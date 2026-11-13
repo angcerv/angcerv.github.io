@@ -44,7 +44,7 @@ export const applications: Application[] = [
     description: 'Write your manuscript, plan the story, and build its world in one local workspace.',
     icon: { kind: 'image', src: writeStudioIcon },
     accent: 'teal',
-    platforms: ['macos', 'ipad'],
+    platforms: ['macos', 'windows', 'ipad'],
     status: 'beta',
     features: [
       'Organize manuscripts into books, chapters, and scenes.',
@@ -61,6 +61,7 @@ export const applications: Application[] = [
         requirements: 'Apple Silicon Mac (M1 or later).',
         instructions: 'Development build, version 0.1.0. Open the disk image and drag Write Studio to Applications.',
       },
+      { platform: 'windows', kind: 'unavailable', requirements: 'Windows x64. Installer build pending.' },
       { platform: 'ipad', kind: 'unavailable' },
     ],
   },

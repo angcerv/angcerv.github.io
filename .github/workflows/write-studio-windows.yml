@@ -1,0 +1,73 @@
+name: Build Write Studio for Windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - ci/write-studio-source.tar.gz
+      - .github/workflows/write-studio-windows.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: write-studio-windows
+  cancel-in-progress: false
+
+jobs:
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+        working-directory: .build/write-studio
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract build inputs
+        working-directory: .
+        run: |
+          mkdir -p .build/write-studio
+          tar -xzf ci/write-studio-source.tar.gz -C .build/write-studio
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: .build/write-studio/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Rust
+        run: |
+          rustup toolchain install stable --profile minimal
+          rustup default stable
+      - run: npm ci
+      - name: Logic checks (no UI)
+        run: npm test
+      - name: Native checks (no UI)
+        run: cargo +stable test --manifest-path src-tauri/Cargo.toml --lib --locked
+      - name: Build Windows x64 installer
+        run: npm run tauri -- build --target x86_64-pc-windows-msvc
+      - run: npm run check:bundle
+      - name: Collect installer
+        run: |
+          mkdir -p ../../windows-installer
+          cp src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/*-setup.exe ../../windows-installer/Write-Studio-Windows-x64-setup.exe
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Write-Studio-Windows-x64
+          path: windows-installer/*.exe
+          if-no-files-found: error
+          retention-days: 30
+      - name: Publish development installer
+        working-directory: .
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          BUILD_COMMIT: ${{ github.sha }}
+        run: |
+          if ! gh release view write-studio-windows >/dev/null 2>&1; then
+            gh release create write-studio-windows --target "$BUILD_COMMIT" --prerelease --title "Write Studio for Windows (development)" --notes "Unsigned Windows x64 development installer. Automated logic, native and packaging checks run before upload. Installation and app behavior have not been manually verified on Windows."
+          fi
+          gh release upload write-studio-windows windows-installer/*.exe --clobber

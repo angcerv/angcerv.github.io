@@ -32,7 +32,7 @@ Add another record to create another card and detail page automatically. The `sl
 
 ## Content sources
 
-- **Write Studio:** `../dev_write/README.md` and the Tauri app configuration. Its original logo was copied from `src-tauri/icons/icon.png`. The catalogue lists macOS and iPad; the README describes Windows validation as pending, so Windows is not advertised here. The iPad build also has platform limitations documented in the source project; the shared feature list does not promise complete platform parity.
+- **Write Studio:** `../dev_write/README.md` and the Tauri app configuration. Its original logo was copied from `src-tauri/icons/icon.png`. The catalogue lists macOS, Windows, and iPad. The Windows installer is built in GitHub Actions; it remains unavailable in the catalogue until its build succeeds. The iPad build also has platform limitations documented in the source project; the shared feature list does not promise complete platform parity.
 - **What’s Cooking:** `../dev_recipes/README.md`, Capacitor configuration, and web manifest. Its original logo was copied from `public/icons/app-192.png`. The project documents iPhone and installable web versions.
 - **DayCraft:** `../dev_productivity/README.md` and Capacitor configuration. Its original logo was copied from `public/brand/apple-touch-icon.png`. The project folder is `dev_productivity`, rather than `dev_proactivity`. The catalogue lists the iPhone app.
 
@@ -59,3 +59,9 @@ App icons support `{ kind: 'image', src: importedIcon }` for existing local asse
 Example labels and their notice are hidden unless a record has `example: true`. Before sharing, supply the actual distribution destinations and relevant installation requirements. Release metadata and screenshots remain omitted until there are confirmed details and real assets to publish.
 
 Fonts are loaded from Google Fonts with local sans-serif fallbacks. The catalogue remains usable if that request is unavailable. Public hosting is public even when its URL is not widely shared.
+
+## Windows installer builds
+
+`python3 scripts/package-write-studio.py ../dev_write` snapshots an explicit allowlist of build inputs into `ci/write-studio-source.tar.gz`, with a SHA-256 manifest. Generated builds, repair backups, IDE settings, and writing projects are excluded. The sibling project is read only. Refresh this snapshot to build a newer app version.
+
+The **Build Write Studio for Windows** workflow runs on snapshot changes or manually. It runs the existing Node and Rust checks without launching the UI, builds the Windows x64 NSIS installer, checks the emitted bundle, and uploads an artifact plus the `write-studio-windows` prerelease asset. The installer is unsigned and has no manual Windows installation verification. A successful build is required before enabling its catalogue download.
