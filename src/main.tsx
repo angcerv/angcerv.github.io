@@ -68,9 +68,12 @@ function AccessOption({ access }: { access: Access }) {
 function Detail({ app }: { app: Application }) {
   return <section className="detail" aria-labelledby="page-title">
     <a className="back-link" href="#/"><ArrowLeft size={16} aria-hidden="true" />All applications</a>
-    <div className="detail-layout"><div className="detail-content"><AppIcon app={app} large />
-      <div className="detail-labels">{app.example && <span className="example-label">Example entry</span>}<span className={`status ${app.status}`}><span />{statuses[app.status]}</span></div>
-      <h1 id="page-title">{app.name}</h1><p className="detail-description">{app.description}</p><Platforms platforms={app.platforms} />
+    <div className="detail-layout"><div className="detail-content">
+      <div className="detail-header"><AppIcon app={app} large /><div className="detail-heading">
+        <h1 id="page-title">{app.name}</h1>
+        <div className="detail-labels">{app.example && <span className="example-label">Example entry</span>}<span className={`status ${app.status}`}><span />{statuses[app.status]}</span></div>
+      </div></div>
+      <p className="detail-description">{app.description}</p><Platforms platforms={app.platforms} />
       {app.features.length > 0 && <section className="features"><h2>What’s inside</h2><ul>{app.features.map(feature => <li key={feature}>{feature}</li>)}</ul></section>}
       {app.screenshots.length > 0 && <section className="screenshots"><h2>A closer look</h2>{app.screenshots.map(shot => <img key={shot.src} src={shot.src} alt={shot.alt} loading="lazy" />)}</section>}
       {(app.version || app.updatedAt) && <dl className="metadata">{app.version && <><dt>Version</dt><dd>{app.version}</dd></>}{app.updatedAt && <><dt>Last updated</dt><dd>{app.updatedAt}</dd></>}</dl>}

@@ -3,6 +3,7 @@
 - Use React and TypeScript. Catalogue records live in `src/catalog.ts`; pages are data driven.
 - Keep all UI, code, comments, and documentation in English.
 - Reuse `AppIcon`, `Platforms`, `Card`, and `AccessOption` in `src/main.tsx`.
+- App detail headers use `.detail-header` with the shared `AppIcon` on the left and the title/status group on the right; allow text to wrap on narrow screens.
 - App icons use the typed `image` or `symbol` variant in `src/catalog.ts`. Import original logos from `src/assets/apps`; render them through the shared `AppIcon` image variant without recoloring them.
 - Shared colors, radius, and motion tokens live in `src/styles.css` under `:root`. Preserve the dark background and teal brand color `#29676D`.
 - Use the installed `lucide-react` icon library. Decorative icons use `aria-hidden`; icon-only controls need accessible names.
