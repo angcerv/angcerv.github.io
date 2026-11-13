@@ -35,7 +35,7 @@ export const platformNames: Record<Platform, string> = {
 };
 
 // Content and original icons come from the sibling application projects.
-// Access stays unavailable until a real distribution URL is supplied.
+// Download links point to existing installers; other access stays unavailable.
 export const applications: Application[] = [
   {
     id: 'write-studio',
@@ -45,7 +45,7 @@ export const applications: Application[] = [
     icon: { kind: 'image', src: writeStudioIcon },
     accent: 'teal',
     platforms: ['macos', 'ipad'],
-    status: 'coming-soon',
+    status: 'beta',
     features: [
       'Organize manuscripts into books, chapters, and scenes.',
       'Plan plots and character arcs alongside your writing.',
@@ -54,7 +54,13 @@ export const applications: Application[] = [
     ],
     screenshots: [],
     access: [
-      { platform: 'macos', kind: 'unavailable' },
+      {
+        platform: 'macos',
+        kind: 'download',
+        url: 'https://angcerv.github.io/downloads/Write-Studio-0.1.0-macOS-Apple-Silicon.dmg',
+        requirements: 'Apple Silicon Mac (M1 or later).',
+        instructions: 'Development build, version 0.1.0. Open the disk image and drag Write Studio to Applications.',
+      },
       { platform: 'ipad', kind: 'unavailable' },
     ],
   },

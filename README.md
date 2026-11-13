@@ -40,7 +40,7 @@ The copied logos are in `src/assets/apps/` and are bundled locally. The sibling 
 
 ## Distribution
 
-No confirmed public download, App Store, TestFlight, or web access URLs were found in the reviewed documentation. All access options therefore remain noninteractive with a “Coming soon” state. This describes catalogue access, rather than claiming that local development builds are releases. Add the real URLs and update each app’s status when its distribution is ready.
+Write Studio offers its existing macOS Apple Silicon development installer, version 0.1.0, from `public/downloads/`. Its catalogue status is Beta; installation and runtime behavior have not been verified for this publication. The installer was copied from the sibling project’s `src-tauri/target/release/bundle/dmg/`. Windows, iPad, iPhone, and web access remain unavailable until their actual distribution artifacts or URLs are ready.
 
 Access options are typed by distribution method:
 
@@ -52,7 +52,7 @@ Access options are typed by distribution method:
 { platform: 'iphone', kind: 'unavailable' }
 ```
 
-These URLs illustrate the schema; do not copy them as real destinations. Only explicit HTTP(S) URLs become actionable links. Keep installers on your external hosting, outside this repository. No arbitrary IPA installation is offered. Confirm the actual desktop OS before replacing `desktop` with `macos`, `windows`, or `linux` in the platforms and access records. Download buttons use that platform name automatically. Access labels are centralized in `src/main.tsx`.
+These URLs illustrate the schema; do not copy them as real destinations. Only explicit HTTP(S) URLs become actionable links. Static installers can live in `public/downloads/` and are copied into `dist/` by Vite. Use GitHub Releases for larger installers when release hosting is configured. No arbitrary IPA installation is offered. Confirm the actual desktop OS before replacing `desktop` with `macos`, `windows`, or `linux` in the platforms and access records. Download buttons use that platform name automatically. Access labels are centralized in `src/main.tsx`.
 
 App icons support `{ kind: 'image', src: importedIcon }` for existing local assets and `{ kind: 'symbol', name: 'panels' }` for a Lucide placeholder (`panels`, `layers`, or `orbit`). Both use the shared `AppIcon` component. Original logos retain their colors. Add actual screenshots through `screenshots: [{ src, alt }]`; do not add fabricated product captures. Shared UI styles and design tokens are in `src/styles.css`.
 
