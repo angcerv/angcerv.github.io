@@ -61,7 +61,12 @@ export const applications: Application[] = [
         requirements: 'Apple Silicon Mac (M1 or later).',
         instructions: 'Development build, version 0.1.0. Open the disk image and drag Write Studio to Applications.',
       },
-      { platform: 'windows', kind: 'unavailable', requirements: 'Windows x64. Installer build pending.' },
+      {
+        platform: 'windows', kind: 'download',
+        url: 'https://github.com/angcerv/angcerv.github.io/releases/download/write-studio-windows-v0.1.0/Write.Studio_0.1.0_x64-setup.exe',
+        requirements: 'Windows x64. Download: approximately 221 MB.',
+        instructions: 'Development build, version 0.1.0. Open the downloaded setup file and follow the installer.',
+      },
       { platform: 'ipad', kind: 'unavailable' },
     ],
   },
