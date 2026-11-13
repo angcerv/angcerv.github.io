@@ -72,8 +72,8 @@ export const applications: Application[] = [
     description: 'Keep your recipes together, plan your meals, and turn ingredients into shopping lists.',
     icon: { kind: 'image', src: whatsCookingIcon },
     accent: 'sand',
-    platforms: ['iphone', 'web'],
-    status: 'coming-soon',
+    platforms: ['iphone', 'ipad', 'web'],
+    status: 'available',
     features: [
       'Collect recipes with ingredients, instructions, and notes.',
       'Organize meals in a weekly planner.',
@@ -82,8 +82,24 @@ export const applications: Application[] = [
     ],
     screenshots: [],
     access: [
-      { platform: 'iphone', kind: 'unavailable' },
-      { platform: 'web', kind: 'unavailable' },
+      {
+        platform: 'iphone', kind: 'web',
+        url: 'https://whats-cooking-angy.localolive16.chatgpt.site',
+        requirements: 'Sign in with the authorized account.',
+        instructions: 'Open in Safari, then choose Share → Add to Home Screen. Enable Open as Web App if offered. Open the new icon before importing a backup.',
+      },
+      {
+        platform: 'ipad', kind: 'web',
+        url: 'https://whats-cooking-angy.localolive16.chatgpt.site',
+        requirements: 'Sign in with the authorized account.',
+        instructions: 'Open in Safari, then choose Share → Add to Home Screen. Enable Open as Web App if offered. Open the new icon before importing a backup.',
+      },
+      {
+        platform: 'web', kind: 'web',
+        url: 'https://whats-cooking-angy.localolive16.chatgpt.site',
+        requirements: 'Sign in with the authorized account.',
+        instructions: 'Recipes stay in this browser. Export backups regularly; data does not sync automatically between devices or with the native app.',
+      },
     ],
   },
   {

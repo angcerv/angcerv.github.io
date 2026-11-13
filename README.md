@@ -33,14 +33,14 @@ Add another record to create another card and detail page automatically. The `sl
 ## Content sources
 
 - **Write Studio:** `../dev_write/README.md` and the Tauri app configuration. Its original logo was copied from `src-tauri/icons/icon.png`. The catalogue lists macOS, Windows, and iPad. The Windows installer is built in GitHub Actions; it remains unavailable in the catalogue until its build succeeds. The iPad build also has platform limitations documented in the source project; the shared feature list does not promise complete platform parity.
-- **What’s Cooking:** `../dev_recipes/README.md`, Capacitor configuration, and web manifest. Its original logo was copied from `public/icons/app-192.png`. The project documents iPhone and installable web versions.
+- **What’s Cooking:** `../dev_recipes/README.md`, Capacitor configuration, and web manifest. Its original logo was copied from `public/icons/app-192.png`. The project documents the native iPhone app and an installable web version, also accessible from iPad.
 - **DayCraft:** `../dev_productivity/README.md` and Capacitor configuration. Its original logo was copied from `public/brand/apple-touch-icon.png`. The project folder is `dev_productivity`, rather than `dev_proactivity`. The catalogue lists the iPhone app.
 
 The copied logos are in `src/assets/apps/` and are bundled locally. The sibling projects are not modified or required to build this website. No new images were generated. Recopy the assets if the original branding changes.
 
 ## Distribution
 
-Write Studio offers its existing macOS Apple Silicon development installer, version 0.1.0, from `public/downloads/`. Its catalogue status is Beta; installation and runtime behavior have not been verified for this publication. The installer was copied from the sibling project’s `src-tauri/target/release/bundle/dmg/`. Windows, iPad, iPhone, and web access remain unavailable until their actual distribution artifacts or URLs are ready.
+Write Studio offers its existing macOS Apple Silicon development installer, version 0.1.0, from `public/downloads/`. Its catalogue status is Beta; installation and runtime behavior have not been verified for this publication. The installer was copied from the sibling project’s `src-tauri/target/release/bundle/dmg/`. Windows and iPad access for Write Studio remain unavailable until their distribution artifacts or URLs are ready. What’s Cooking links to its existing installable web app for iPhone, iPad, and browsers. It retains owner-only access and requires the authorized account to sign in. Its mobile access cards explain Safari’s Add to Home Screen flow. Browser data is local and does not sync automatically with native apps or other devices. DayCraft remains unavailable.
 
 Access options are typed by distribution method:
 
