@@ -67,9 +67,8 @@ function AccessOption({ access }: { access: Access }) {
 }
 function Detail({ app }: { app: Application }) {
   return <section className="detail" aria-labelledby="page-title">
-    <a className="back-link" href="#/"><ArrowLeft size={16} aria-hidden="true" />All applications</a>
     <div className="detail-layout"><div className="detail-content">
-      <div className="detail-header"><AppIcon app={app} large /><div className="detail-heading">
+      <div className="detail-header"><a className="back-link icon-only" href="#/" aria-label="Back to all applications" title="Back to all applications"><ArrowLeft size={22} aria-hidden="true" /></a><AppIcon app={app} large /><div className="detail-heading">
         <h1 id="page-title">{app.name}</h1>
         <div className="detail-labels">{app.example && <span className="example-label">Example entry</span>}<span className={`status ${app.status}`}><span />{statuses[app.status]}</span></div>
       </div></div>
@@ -94,9 +93,9 @@ function App() {
     document.querySelector<HTMLElement>('#main-content')?.focus({ preventScroll: true });
   }, [route, app, home]);
   return <div className="site-shell"><a className="skip-link" href="#main-content" onClick={event => { event.preventDefault(); document.getElementById('main-content')?.focus(); }}>Skip to content</a>
-    <header className="site-header"><a className="brand" href="#/" aria-label="Astronaut Studios home"><span className="brand-symbol" aria-hidden="true">A<span /></span><span>Astronaut<span className="brand-light">Studios</span></span></a><nav aria-label="Main navigation"><a className={home ? 'nav-link current' : 'nav-link'} href="#/" aria-current={home ? 'page' : undefined}>Applications<span className="nav-dot" /></a></nav></header>
+    <header className="site-header"><a className="brand" href="#/" aria-label="Astronaut Studios home"><span className="brand-symbol" aria-hidden="true">A<span /></span><span>Astronaut<span className="brand-light">Studios</span></span></a></header>
     <main id="main-content" tabIndex={-1}>{home ? <Catalog /> : app ? <Detail app={app} /> : <section className="not-found"><div className="eyebrow">OFF THE MAP / 404</div><h1>Nothing in this orbit.</h1><p>This application page could not be found.</p><a className="text-link" href="#/">Back to the collection<ArrowRight size={16} /></a></section>}</main>
-    <footer className="site-footer"><div><Orbit size={18} aria-hidden="true" /><span>Astronaut Studios</span><span className="footer-divider">/</span><span>A personal app collection.</span></div><span>Made with curiosity.<span className="footer-star" aria-hidden="true">✦</span></span></footer>
+    <footer className="site-footer"><div><Orbit size={18} aria-hidden="true" /><span>Astronaut Studios</span></div></footer>
   </div>;
 }
 
