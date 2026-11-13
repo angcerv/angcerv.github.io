@@ -22,7 +22,7 @@ The production output is `dist/`. `npm run preview` can serve the production bui
 
 The target repository is `angcerv/angcerv.github.io`, serving `https://angcerv.github.io/`. For GitHub Free, the repository must be public. In the repository's **Settings → Pages**, select **GitHub Actions** as the build and deployment source. The workflow in `.github/workflows/deploy-pages.yml` checks and builds the site, then publishes `dist/` on every push to `master`. It can also be started manually from the Actions tab.
 
-The app uses hash routing, so app detail links work on GitHub Pages without custom rewrite rules. Only source files and the package lockfile belong in the repository; `node_modules/` and `dist/` are ignored.
+The app uses hash routing, so app detail links work on GitHub Pages without custom rewrite rules. The catalogue source, package lockfile, and published app bundles in `public/` belong in the repository; `node_modules/` and `dist/` are ignored.
 
 ## Edit the catalogue
 
@@ -40,7 +40,7 @@ The copied logos are in `src/assets/apps/` and are bundled locally. The sibling 
 
 ## Distribution
 
-Write Studio offers its existing macOS Apple Silicon development installer, version 0.1.0, from `public/downloads/`. Its catalogue status is Beta; installation and runtime behavior have not been verified for this publication. The installer was copied from the sibling project’s `src-tauri/target/release/bundle/dmg/`. Windows and iPad access for Write Studio remain unavailable until their distribution artifacts or URLs are ready. What’s Cooking links to its existing installable web app for iPhone, iPad, and browsers. It retains owner-only access and requires the authorized account to sign in. Its mobile access cards explain Safari’s Add to Home Screen flow. Browser data is local and does not sync automatically with native apps or other devices. DayCraft remains unavailable.
+Write Studio offers its existing macOS Apple Silicon development installer, version 0.1.0, from `public/downloads/`. Its catalogue status is Beta; installation and runtime behavior have not been verified for this publication. The installer was copied from the sibling project’s `src-tauri/target/release/bundle/dmg/`. Windows and iPad access for Write Studio remain unavailable until their distribution artifacts or URLs are ready. What’s Cooking links to its existing installable web app for iPhone, iPad, and browsers. It is publicly hosted at `https://angcerv.github.io/whats-cooking/` without ChatGPT authentication. Its mobile access cards explain Safari’s Add to Home Screen flow. Browser data is local and does not sync automatically with native apps or other devices. DayCraft remains unavailable.
 
 Access options are typed by distribution method:
 
@@ -65,3 +65,9 @@ Fonts are loaded from Google Fonts with local sans-serif fallbacks. The catalogu
 `python3 scripts/package-write-studio.py ../dev_write` snapshots an explicit allowlist of build inputs into `ci/write-studio-source.tar.gz`, with a SHA-256 manifest. Generated builds, repair backups, IDE settings, and writing projects are excluded. The sibling project is read only. Refresh this snapshot to build a newer app version.
 
 The **Build Write Studio for Windows** workflow runs on snapshot changes or manually. It runs the existing Node and Rust checks without launching the UI, builds the Windows x64 NSIS installer, checks the emitted bundle, and uploads an artifact plus the `write-studio-windows` prerelease asset. The installer is unsigned and has no manual Windows installation verification. A successful build is required before enabling its catalogue download.
+
+## What’s Cooking PWA on GitHub Pages
+
+Run `python3 scripts/build-whats-cooking.py ../dev_recipes` to refresh the published app from local source. The script copies build inputs into an ignored staging directory, adapts the manifest, icons, service-worker registration, and installation text for `/whats-cooking/`, runs the existing non-UI tests plus a subpath isolation check, builds the app, and copies only compiled assets to `public/whats-cooking/`. The sibling project is not modified. Node/npm dependencies must be installable. Commit the script and compiled bundle; the normal catalogue build includes them automatically. No separate app repository is needed for this workflow.
+
+The previous Sites publication remains available for backup export. Changing origin does not transfer browser data: export a full JSON backup there, open the new GitHub Pages app, add it to the Home Screen, then import the backup inside that installed app. Check the imported records before removing the old app. Each visitor uses their own local browser data; publication contains no recipes or personal backups.

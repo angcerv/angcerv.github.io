@@ -12,3 +12,4 @@
 - Do not invent app capabilities, operating systems, distribution links, or product assets.
 - Do not generate images or launch applications/browsers for testing without explicit permission.
 - Run `npm run typecheck` and `npm run build` for implementation verification.
+- Published PWA bundles live in `public/<app>/`; scope each app's manifest and service worker to its own folder. Refresh What’s Cooking with `python3 scripts/build-whats-cooking.py ../dev_recipes`, not by editing compiled assets.

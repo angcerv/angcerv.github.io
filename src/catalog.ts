@@ -84,20 +84,17 @@ export const applications: Application[] = [
     access: [
       {
         platform: 'iphone', kind: 'web',
-        url: 'https://whats-cooking-angy.localolive16.chatgpt.site',
-        requirements: 'Sign in with the authorized account.',
+        url: 'https://angcerv.github.io/whats-cooking/',
         instructions: 'Open in Safari, then choose Share → Add to Home Screen. Enable Open as Web App if offered. Open the new icon before importing a backup.',
       },
       {
         platform: 'ipad', kind: 'web',
-        url: 'https://whats-cooking-angy.localolive16.chatgpt.site',
-        requirements: 'Sign in with the authorized account.',
+        url: 'https://angcerv.github.io/whats-cooking/',
         instructions: 'Open in Safari, then choose Share → Add to Home Screen. Enable Open as Web App if offered. Open the new icon before importing a backup.',
       },
       {
         platform: 'web', kind: 'web',
-        url: 'https://whats-cooking-angy.localolive16.chatgpt.site',
-        requirements: 'Sign in with the authorized account.',
+        url: 'https://angcerv.github.io/whats-cooking/',
         instructions: 'Recipes stay in this browser. Export backups regularly; data does not sync automatically between devices or with the native app.',
       },
     ],
