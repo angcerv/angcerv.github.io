@@ -64,9 +64,11 @@ Fonts are loaded from Google Fonts with local sans-serif fallbacks. The catalogu
 
 `python3 scripts/package-write-studio.py ../dev_write` snapshots an explicit allowlist of build inputs into `ci/write-studio-source.tar.gz`, with a SHA-256 manifest. Generated builds, repair backups, IDE settings, and writing projects are excluded. The sibling project is read only. Refresh this snapshot to build a newer app version.
 
-The **Build Write Studio for Windows** workflow runs on snapshot changes or manually. It runs the existing Node and Rust checks without launching the UI, builds the Windows x64 NSIS installer, checks the emitted bundle, and uploads an artifact plus the `write-studio-windows` prerelease asset. The installer is unsigned and has no manual Windows installation verification. The catalogue currently links to the separately built Windows installer in `write-studio-windows-v0.1.0`; this does not claim that the automated workflow passed.
+The **Build Write Studio for Windows** workflow runs on snapshot changes or manually. It runs the existing Node and Rust checks without launching the UI, builds the Windows x64 NSIS installer, checks the emitted bundle, and uploads an artifact plus the `write-studio-windows` prerelease asset. The installer is unsigned and has no manual Windows installation verification. The catalogue currently links to the separately built Windows installer in `write-studio-windows-v0.1.0`; this does not claim that the automated workflow passed. The source snapshot was refreshed from `../dev_write` on 2026-11-14, including the upstream correction to the previously failing scene-geography assertion. Keep the existing download until a new installer has been uploaded successfully.
 
 ## What’s Cooking PWA on GitHub Pages
+
+The published bundle was refreshed from local source on 2026-11-14; all 85 non-UI tests passed, including the subpath isolation check.
 
 Run `python3 scripts/build-whats-cooking.py ../dev_recipes` to refresh the published app from local source. The script copies build inputs into an ignored staging directory, adapts the manifest, icons, service-worker registration, and installation text for `/whats-cooking/`, runs the existing non-UI tests plus a subpath isolation check, builds the app, and copies only compiled assets to `public/whats-cooking/`. The sibling project is not modified. Node/npm dependencies must be installable. Commit the script and compiled bundle; the normal catalogue build includes them automatically. No separate app repository is needed for this workflow.
 

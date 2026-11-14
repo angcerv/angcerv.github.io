@@ -78,6 +78,7 @@ export const applications: Application[] = [
     accent: 'sand',
     platforms: ['iphone', 'ipad', 'web'],
     status: 'available',
+    updatedAt: '2026-11-14',
     features: [
       'Collect recipes with ingredients, instructions, and notes.',
       'Organize meals in a weekly planner.',
