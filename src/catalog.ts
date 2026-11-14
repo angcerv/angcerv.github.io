@@ -57,9 +57,9 @@ export const applications: Application[] = [
       {
         platform: 'macos',
         kind: 'download',
-        url: 'https://angcerv.github.io/downloads/Write-Studio-0.1.0-macOS-Apple-Silicon.dmg',
+        url: 'https://angcerv.github.io/downloads/Write-Studio-0.1.0-macOS-Apple-Silicon.dmg?build=2026-11-14',
         requirements: 'Apple Silicon Mac (M1 or later).',
-        instructions: 'Development build, version 0.1.0. Open the disk image and drag Write Studio to Applications.',
+        instructions: 'Development build, version 0.1.0, built on 14 November 2026. Open the disk image and drag Write Studio to Applications.',
       },
       {
         platform: 'windows', kind: 'download',
