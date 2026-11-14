@@ -46,6 +46,8 @@ export const applications: Application[] = [
     accent: 'teal',
     platforms: ['macos', 'windows'],
     status: 'beta',
+    version: '0.1.0',
+    updatedAt: '2026-11-14',
     features: [
       'Organize manuscripts into books, chapters, and scenes.',
       'Plan plots and character arcs alongside your writing.',
@@ -63,9 +65,9 @@ export const applications: Application[] = [
       },
       {
         platform: 'windows', kind: 'download',
-        url: 'https://github.com/angcerv/angcerv.github.io/releases/download/write-studio-windows-v0.1.0/Write.Studio_0.1.0_x64-setup.exe',
+        url: 'https://github.com/angcerv/angcerv.github.io/releases/download/write-studio-windows/Write-Studio-Windows-x64-setup.exe',
         requirements: 'Windows x64. Download: approximately 221 MB.',
-        instructions: 'Development build, version 0.1.0. Open the downloaded setup file and follow the installer.',
+        instructions: 'Development build, version 0.1.0, built on 14 November 2026. Open the downloaded setup file and follow the installer.',
       },
     ],
   },
