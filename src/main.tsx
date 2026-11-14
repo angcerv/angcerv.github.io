@@ -43,7 +43,7 @@ function Card({ app, index }: { app: Application; index: number }) {
 function Catalog() {
   return <>
     <section className="intro" aria-labelledby="page-title">
-      <div><div className="eyebrow"><span /> INDEPENDENTLY CREATED</div><h1 id="page-title">A small universe<br />of <span>applications.</span></h1><p>A personal collection of apps for your everyday devices.<br className="desktop-break" /> Find an app, explore the details, and make it yours.</p></div>
+      <div><h1 id="page-title">A small universe<br />of <span>applications.</span></h1><p>A personal collection of apps for your everyday devices.<br className="desktop-break" /> Find an app, explore the details, and make it yours.</p></div>
       <div className="intro-mark" aria-hidden="true"><Orbit strokeWidth={0.65} /><span>IDEAS INTO ORBIT</span></div>
     </section>
     <section className="catalog" aria-labelledby="catalog-title">
