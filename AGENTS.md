@@ -14,3 +14,5 @@
 - Do not generate images or launch applications/browsers for testing without explicit permission.
 - Run `npm run typecheck` and `npm run build` for implementation verification.
 - Published PWA bundles live in `public/<app>/`; scope each app's manifest and service worker to its own folder. Refresh What’s Cooking with `python3 scripts/build-whats-cooking.py ../dev_recipes`, not by editing compiled assets.
+
+- Refresh DayCraft with `python3 scripts/build-daycraft.py ../dev_productivity`. Android APKs use `scripts/build-android.py`; keep `.android-signing/` private and excluded from publication. Android access reuses the shared `Smartphone` icon and `AccessOption` download variant.

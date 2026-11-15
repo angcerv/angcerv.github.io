@@ -3,3 +3,8 @@ dist/
 *.tsbuildinfo
 .DS_Store
 .build/
+
+# Private Android update-signing keys; never publish.
+.android-signing/
+
+__pycache__/

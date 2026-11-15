@@ -1,0 +1,1 @@
+import{n as e}from"./Icon-O4rCrlAP.js";import{n as t,t as n}from"./eventIcons-_LQoIoMi.js";import{t as r}from"./IconPicker-CVniXsEa.js";var i=e(),a=t.map(([e,t])=>({value:e,icon:e,label:t}));function o({value:e,onChange:t}){return(0,i.jsx)(r,{value:n(e),options:a,onChange:t})}export{o as t};

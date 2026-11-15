@@ -2,7 +2,7 @@ import writeStudioIcon from './assets/apps/write-studio.png';
 import whatsCookingIcon from './assets/apps/whats-cooking.png';
 import daycraftIcon from './assets/apps/daycraft.png';
 
-export type Platform = 'desktop' | 'macos' | 'windows' | 'linux' | 'ipad' | 'iphone' | 'web';
+export type Platform = 'android' | 'desktop' | 'macos' | 'windows' | 'linux' | 'ipad' | 'iphone' | 'web';
 export type ApplicationIcon =
   | { kind: 'image'; src: string }
   | { kind: 'symbol'; name: 'panels' | 'layers' | 'orbit' };
@@ -31,7 +31,7 @@ export interface Application {
   updatedAt?: string;
 }
 export const platformNames: Record<Platform, string> = {
-  desktop: 'Desktop', macos: 'macOS', windows: 'Windows', linux: 'Linux', ipad: 'iPad', iphone: 'iPhone', web: 'Web',
+  android: 'Android', desktop: 'Desktop', macos: 'macOS', windows: 'Windows', linux: 'Linux', ipad: 'iPad', iphone: 'iPhone', web: 'Web',
 };
 
 // Content and original icons come from the sibling application projects.
@@ -78,9 +78,9 @@ export const applications: Application[] = [
     description: 'Keep your recipes together, plan your meals, and turn ingredients into shopping lists.',
     icon: { kind: 'image', src: whatsCookingIcon },
     accent: 'sand',
-    platforms: ['iphone', 'ipad', 'web'],
+    platforms: ['iphone', 'ipad', 'android', 'web'],
     status: 'available',
-    updatedAt: '2026-11-14',
+    updatedAt: '2026-11-15',
     features: [
       'Collect recipes with ingredients, instructions, and notes.',
       'Organize meals in a weekly planner.',
@@ -89,6 +89,7 @@ export const applications: Application[] = [
     ],
     screenshots: [],
     access: [
+      { platform: 'android', kind: 'download', url: 'https://angcerv.github.io/downloads/whats-cooking-android.apk?build=2026-11-15', requirements: 'Android 7.0 or later.', instructions: 'Download the APK and allow installation from your browser when Android asks. Install the file. Data stays on this device; import a backup to transfer recipes.' },
       {
         platform: 'iphone', kind: 'web',
         url: 'https://angcerv.github.io/whats-cooking/',
@@ -113,8 +114,10 @@ export const applications: Application[] = [
     description: 'Bring your calendar, tasks, habits, and journal together to organize each day.',
     icon: { kind: 'image', src: daycraftIcon },
     accent: 'blue',
-    platforms: ['iphone'],
-    status: 'coming-soon',
+    platforms: ['iphone', 'ipad', 'android', 'web'],
+    status: 'beta',
+    version: '0.1.0',
+    updatedAt: '2026-11-15',
     features: [
       'Plan events and tasks with day, week, and month calendar views.',
       'Set up recurring events and tasks.',
@@ -122,6 +125,11 @@ export const applications: Application[] = [
       'Keep journal entries with optional mood and activity links.',
     ],
     screenshots: [],
-    access: [{ platform: 'iphone', kind: 'unavailable' }],
+    access: [
+      { platform: 'iphone', kind: 'web', url: 'https://angcerv.github.io/daycraft/', instructions: 'Open in Safari, then choose Share → Add to Home Screen. Open the new icon before importing a backup. iCloud, native reminders, and iPhone widgets are not included in the web app.' },
+      { platform: 'ipad', kind: 'web', url: 'https://angcerv.github.io/daycraft/', instructions: 'Open in Safari, then choose Share → Add to Home Screen. Open the new icon before importing a backup. iCloud, native reminders, and iPhone widgets are not included in the web app.' },
+      { platform: 'android', kind: 'download', url: 'https://angcerv.github.io/downloads/daycraft-android.apk?build=2026-11-15', requirements: 'Android 7.0 or later.', instructions: 'Download the APK and allow installation from your browser when Android asks. Install the file. iCloud and iPhone widgets are not included.' },
+      { platform: 'web', kind: 'web', url: 'https://angcerv.github.io/daycraft/', instructions: 'Data stays in this browser. Export backups regularly; data does not sync automatically with other devices or native apps. Native reminders, iCloud, and iPhone widgets are not included.' },
+    ],
   },
 ];

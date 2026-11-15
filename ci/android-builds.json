@@ -1,0 +1,18 @@
+[
+  {
+    "app": "daycraft",
+    "builtAt": "2026-11-15",
+    "file": "daycraft-android.apk",
+    "sha256": "89bcc0e342eef68fb8e215d9c051d079705328f2ad594b9d1ca232f4a8511301",
+    "bytes": 4404368,
+    "minimumAndroidApi": 24
+  },
+  {
+    "app": "whats-cooking",
+    "builtAt": "2026-11-15",
+    "file": "whats-cooking-android.apk",
+    "sha256": "dadc4c93457ada6a383a220a5e5a8bdf2fb8b9e9e2d82250fdea6a0245cac327",
+    "bytes": 3798027,
+    "minimumAndroidApi": 24
+  }
+]

@@ -6,7 +6,7 @@ import { applications, platformNames } from './catalog';
 import type { Application, Access, Platform } from './catalog';
 import './styles.css';
 
-const platformIcons: Record<Platform, LucideIcon> = { desktop: Monitor, macos: Monitor, windows: Monitor, linux: Monitor, ipad: Tablet, iphone: Smartphone, web: Globe };
+const platformIcons: Record<Platform, LucideIcon> = { android: Smartphone, desktop: Monitor, macos: Monitor, windows: Monitor, linux: Monitor, ipad: Tablet, iphone: Smartphone, web: Globe };
 const appIcons = { panels: PanelsTopLeft, layers: Layers, orbit: Orbit };
 const statuses = { available: 'Available', beta: 'Beta', 'coming-soon': 'Coming soon' };
 const accessLabels = { download: 'Download installer', web: 'Open web app', 'app-store': 'View on App Store', testflight: 'Join beta', unavailable: 'Coming soon' };
