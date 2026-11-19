@@ -26,7 +26,7 @@ The app uses hash routing, so app detail links work on GitHub Pages without cust
 
 ## Edit the catalogue
 
-All application content and access links live in `src/catalog.ts`. The catalogue contains Write Studio, What’s Cooking, and DayCraft, using their existing names, original icons, and documented features. Features, screenshots, version, update date, requirements, and installation instructions are optional and only rendered when supplied.
+All application content and access links live in `src/catalog.ts`. The catalogue contains Write Studio, What’s Cooking, DayCraft, and Brújula Empleo, using their existing names, original icons, and documented features. Features, screenshots, version, update date, requirements, and installation instructions are optional and only rendered when supplied.
 
 Add another record to create another card and detail page automatically. The `slug` defines a shareable URL such as `https://your-domain/#/apps/write-studio`. Hash routing supports direct links on static hosts without server rewrite rules. Keep slugs stable after sharing; IDs and slugs must be unique.
 
@@ -35,6 +35,7 @@ Add another record to create another card and detail page automatically. The `sl
 - **Write Studio:** `../dev_write/README.md` and the Tauri app configuration. Its original logo was copied from `src-tauri/icons/icon.png`. The catalogue lists macOS and Windows. The Windows x64 installer is built by GitHub Actions from the source snapshot and attached to the public catalogue repository’s `write-studio-windows` release. iPad is omitted from the catalogue because no distributable iPad or web version is available.
 - **What’s Cooking:** `../dev_recipes/README.md`, Capacitor configuration, and web manifest. Its original logo was copied from `public/icons/app-192.png`. The project documents the native iPhone app and an installable web version, also accessible from iPad.
 - **DayCraft:** `../dev_productivity/README.md` and Capacitor configuration. Its original logo was copied from `public/brand/apple-touch-icon.png`. The project folder is `dev_productivity`, rather than `dev_proactivity`. The catalogue links to the installable web app for iPhone, iPad, and browsers, plus a signed Android APK.
+- **Brújula Empleo:** `../dev_irene/README.md` and the Tauri configuration. The Windows x64 NSIS installer is built in the ScientistIrene repository and published to its `brujula-empleo-windows` prerelease. The public build uses the generic profile setup. Its original icon comes from `src-tauri/icons/32x32.png`.
 
 The copied logos are in `src/assets/apps/` and are bundled locally. The sibling projects are not modified or required to build this website. No new images were generated. Recopy the assets if the original branding changes.
 

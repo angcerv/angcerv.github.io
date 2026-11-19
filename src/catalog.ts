@@ -1,6 +1,7 @@
 import writeStudioIcon from './assets/apps/write-studio.png';
 import whatsCookingIcon from './assets/apps/whats-cooking.png';
 import daycraftIcon from './assets/apps/daycraft.png';
+import brujulaEmpleoIcon from './assets/apps/brujula-empleo.png';
 
 export type Platform = 'android' | 'desktop' | 'macos' | 'windows' | 'linux' | 'ipad' | 'iphone' | 'web';
 export type ApplicationIcon =
@@ -130,6 +131,32 @@ export const applications: Application[] = [
       { platform: 'ipad', kind: 'web', url: 'https://angcerv.github.io/daycraft/', instructions: 'Open in Safari, then choose Share → Add to Home Screen. Open the new icon before importing a backup. iCloud, native reminders, and iPhone widgets are not included in the web app.' },
       { platform: 'android', kind: 'download', url: 'https://angcerv.github.io/downloads/daycraft-android.apk?build=2026-11-15', requirements: 'Android 7.0 or later.', instructions: 'Download the APK and allow installation from your browser when Android asks. Install the file. iCloud and iPhone widgets are not included.' },
       { platform: 'web', kind: 'web', url: 'https://angcerv.github.io/daycraft/', instructions: 'Data stays in this browser. Export backups regularly; data does not sync automatically with other devices or native apps. Native reminders, iCloud, and iPhone widgets are not included.' },
+    ],
+  },
+  {
+    id: 'brujula-empleo',
+    slug: 'brujula-empleo',
+    name: 'Brújula Empleo',
+    description: 'Search job boards, compare openings with your profile, and track your applications.',
+    icon: { kind: 'image', src: brujulaEmpleoIcon },
+    accent: 'teal',
+    platforms: ['windows'],
+    status: 'beta',
+    version: '0.1.0',
+    features: [
+      'Search supported job boards and open the original listings.',
+      'Import a CV or enter your profile to see how well openings match.',
+      'Save jobs and track applications with data stored on your device.',
+    ],
+    screenshots: [],
+    access: [
+      {
+        platform: 'windows',
+        kind: 'download',
+        url: 'https://github.com/angcerv/ScientistIrene/releases/download/brujula-empleo-windows/Brujula-Empleo-Windows-x64-setup.exe',
+        requirements: 'Windows x64 with Microsoft Edge WebView2.',
+        instructions: 'Open the downloaded setup file to install this unsigned beta. Add or import your profile after installing.',
+      },
     ],
   },
 ];
